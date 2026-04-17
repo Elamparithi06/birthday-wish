@@ -4,19 +4,11 @@ export const levelTwoLives = 2;
 export const arcadeGames = [
   {
     id: 'level1',
-    badge: 'Level 1',
+    badge: 'Balloon Game',
     title: 'Sky Balloon Blitz',
     description:
-      'Catch balloons falling from the sky, avoid the bombs, and score 50 points to unlock the next stage.',
-    meta: '5-point balloons, rare 10-point balloons, instant bomb fail',
-  },
-  {
-    id: 'level2',
-    badge: 'Level 2',
-    title: 'Beach Pot Shuffle',
-    description:
-      'A hidden gift sits inside one of four beach pots. Follow the shuffle and pick the right one before your 2 chances run out.',
-    meta: 'Beach table shuffle, 2 chances, reveal reward inside the winning pot',
+      'Catch balloons falling from the sky, avoid the bombs, and score 50 points to unlock the birthday cake surprise.',
+    meta: '5-point balloons, rare 10-point balloons, instant bomb fail, cake reveal at the end',
   },
 ];
 

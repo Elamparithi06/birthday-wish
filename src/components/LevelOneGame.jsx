@@ -135,8 +135,8 @@ function LevelOneGame({ onBack, onComplete }) {
       {status === 'won' && (
         <div className="overlay-card">
           <span className="board-badge">Level Cleared</span>
-          <h3>Level 2 is unlocked.</h3>
-          <p>You reached {score} points. Opening the beach shuffle game now.</p>
+          <h3>The birthday cake surprise is unlocked.</h3>
+          <p>You reached {score} points. Opening the final surprise now.</p>
         </div>
       )}
     </div>

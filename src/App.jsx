@@ -1,19 +1,17 @@
 import { useEffect, useState } from 'react';
 import ArcadeHome from './components/ArcadeHome';
+import BirthdayCakeSurprise from './components/BirthdayCakeSurprise';
 import Footer from './components/Footer';
 import LevelOneGame from './components/LevelOneGame';
-import LevelTwoGame from './components/LevelTwoGame';
 import Navbar from './components/Navbar';
-import Scene from './components/Scene';
 import { arcadeGames } from './data/gameData';
 
 function App() {
   const [screen, setScreen] = useState('home');
-  const [levelOneUnlocked, setLevelOneUnlocked] = useState(true);
-  const [levelTwoUnlocked, setLevelTwoUnlocked] = useState(false);
   const [levelOneBest, setLevelOneBest] = useState(0);
-  const birthdayName = 'Birthday Girl';
-  const isGameScreen = screen === 'level1' || screen === 'level2';
+  const [surpriseUnlocked, setSurpriseUnlocked] = useState(false);
+  const birthdayName = 'Roopan';
+  const isGameScreen = screen === 'level1';
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
@@ -30,16 +28,12 @@ function App() {
 
   const handleLevelOneWin = (score) => {
     setLevelOneBest((current) => Math.max(current, score));
-    setLevelTwoUnlocked(true);
-    setScreen('level2');
+    setSurpriseUnlocked(true);
+    setScreen('reveal');
   };
 
   const handleLevelOneExit = (score) => {
     setLevelOneBest((current) => Math.max(current, score));
-    setScreen('home');
-  };
-
-  const handleLevelTwoExit = () => {
     setScreen('home');
   };
 
@@ -55,15 +49,9 @@ function App() {
           {screen === 'home' && (
             <ArcadeHome
               games={arcadeGames}
-              levelOneUnlocked={levelOneUnlocked}
-              levelTwoUnlocked={levelTwoUnlocked}
               levelOneBest={levelOneBest}
+              surpriseUnlocked={surpriseUnlocked}
               onPlayLevelOne={() => setScreen('level1')}
-              onPlayLevelTwo={() => {
-                if (levelTwoUnlocked) {
-                  setScreen('level2');
-                }
-              }}
             />
           )}
 
@@ -71,35 +59,27 @@ function App() {
             <LevelOneGame onBack={handleLevelOneExit} onComplete={handleLevelOneWin} />
           )}
 
-          {screen === 'level2' && (
-            <LevelTwoGame
-              onBack={handleLevelTwoExit}
-              onComplete={() => setScreen('reveal')}
-              playerName={birthdayName}
-            />
-          )}
-
           {screen === 'reveal' && (
             <div className="reveal-shell">
               <div className="reveal-sidebar">
                 <p className="eyebrow">Reward Unlocked</p>
-                <h1>The arcade was just the disguise.</h1>
+                <h1>The balloon game opened the birthday surprise.</h1>
                 <p className="intro">
-                  Level 1 and Level 2 are cleared. The hidden reward is finally ready to open.
+                  You cleared the balloon round, so the final birthday cake animation is live now.
                 </p>
 
                 <div className="moment-strip">
-                  <span>Session complete</span>
-                  <span>Secret reward found</span>
+                  <span>Balloon game cleared</span>
+                  <span>Cake surprise unlocked</span>
                   <span>Birthday reveal live</span>
                 </div>
 
                 <button className="ghost-button reveal-home-button" onClick={() => setScreen('home')}>
-                  Back to Arcade Home
+                  Back to Home
                 </button>
               </div>
 
-              <Scene celebrating birthdayName={birthdayName} />
+              <BirthdayCakeSurprise birthdayName={birthdayName} />
             </div>
           )}
         </section>

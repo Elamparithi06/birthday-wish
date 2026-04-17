@@ -928,6 +928,421 @@ button {
   margin-top: 24px;
 }
 
+.cake-surprise-shell {
+  position: relative;
+}
+
+.cake-surprise-stage {
+  position: relative;
+  min-height: 70vh;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.24), transparent 24%),
+    linear-gradient(180deg, #252432 0%, #302e44 100%);
+  box-shadow: inset 0 -14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.cake-banner,
+.cake-side-balloons,
+.party-popper {
+  position: absolute;
+  z-index: 2;
+}
+
+.cake-banner {
+  top: 26px;
+  left: 50%;
+  width: min(88%, 760px);
+  transform: translateX(-50%);
+}
+
+.cake-banner-string {
+  position: absolute;
+  top: 16px;
+  width: 23%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.cake-banner-string-left {
+  left: 0;
+  transform: rotate(9deg);
+  transform-origin: left center;
+}
+
+.cake-banner-string-right {
+  right: 0;
+  transform: rotate(-9deg);
+  transform-origin: right center;
+}
+
+.cake-banner-flags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cake-banner-flag {
+  display: grid;
+  place-items: start center;
+  width: 34px;
+  height: 46px;
+  padding-top: 8px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ff9ac0, #f25b93);
+  box-shadow: 0 10px 18px rgba(13, 10, 30, 0.18);
+}
+
+.cake-banner-flag:nth-child(3n) {
+  background: linear-gradient(180deg, #ffd873, #ffb441);
+}
+
+.cake-banner-flag:nth-child(4n) {
+  background: linear-gradient(180deg, #8fd8ff, #4d8df5);
+}
+
+.cake-banner-gap {
+  width: 18px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cake-side-balloons {
+  top: 110px;
+  display: flex;
+  gap: 14px;
+}
+
+.cake-side-balloons-left {
+  left: 34px;
+}
+
+.cake-side-balloons-right {
+  right: 34px;
+}
+
+.decor-balloon {
+  position: relative;
+  width: 56px;
+  height: 72px;
+  border-radius: 50% 50% 48% 48%;
+  box-shadow: 0 14px 30px rgba(15, 10, 28, 0.18);
+  animation: decorFloat 4.2s ease-in-out infinite;
+}
+
+.decor-balloon::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  width: 2px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateX(-50%);
+}
+
+.decor-balloon::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.decor-balloon-pink {
+  background: linear-gradient(180deg, #ffa8ca, #f15a95 72%, #d52f72);
+}
+
+.decor-balloon-gold {
+  background: linear-gradient(180deg, #ffe28d, #ffbc4a 72%, #df8a17);
+  animation-delay: 0.4s;
+}
+
+.decor-balloon-blue {
+  background: linear-gradient(180deg, #a4e4ff, #5e9fff 72%, #365edb);
+  animation-delay: 0.8s;
+}
+
+.decor-balloon-peach {
+  background: linear-gradient(180deg, #ffc4a8, #ff8d69 72%, #de5b46);
+}
+
+.party-popper {
+  bottom: 46px;
+  width: 78px;
+  height: 120px;
+}
+
+.party-popper::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 44px;
+  height: 64px;
+  border-radius: 12px 12px 18px 18px;
+  background: linear-gradient(180deg, #ffd873, #ff7aa7);
+  box-shadow: 0 16px 30px rgba(15, 10, 28, 0.2);
+}
+
+.party-popper::after {
+  content: '';
+  position: absolute;
+  bottom: 44px;
+  width: 52px;
+  height: 2px;
+  border-top: 3px dashed rgba(255, 255, 255, 0.8);
+}
+
+.party-popper-left {
+  left: 42px;
+  transform: rotate(-18deg);
+}
+
+.party-popper-left::before,
+.party-popper-left::after {
+  left: 16px;
+}
+
+.party-popper-right {
+  right: 42px;
+  transform: rotate(18deg);
+}
+
+.party-popper-right::before,
+.party-popper-right::after {
+  right: 16px;
+}
+
+.party-popper-burst {
+  position: absolute;
+  top: 14px;
+  width: 38px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fff5a6, #ff7fa8);
+  transform-origin: left center;
+  animation: popperBurst 1.8s ease-out infinite;
+}
+
+.party-popper-left .burst-one {
+  left: 36px;
+  transform: rotate(-42deg);
+}
+
+.party-popper-left .burst-two {
+  left: 28px;
+  top: 22px;
+  background: linear-gradient(90deg, #8fd8ff, #5c90ff);
+  transform: rotate(-16deg);
+  animation-delay: 0.15s;
+}
+
+.party-popper-left .burst-three {
+  left: 34px;
+  top: 30px;
+  background: linear-gradient(90deg, #ffd873, #ff9d49);
+  transform: rotate(10deg);
+  animation-delay: 0.28s;
+}
+
+.party-popper-right .burst-one {
+  right: 36px;
+  transform: rotate(222deg);
+}
+
+.party-popper-right .burst-two {
+  right: 28px;
+  top: 22px;
+  background: linear-gradient(90deg, #8fd8ff, #5c90ff);
+  transform: rotate(196deg);
+  animation-delay: 0.15s;
+}
+
+.party-popper-right .burst-three {
+  right: 34px;
+  top: 30px;
+  background: linear-gradient(90deg, #ffd873, #ff9d49);
+  transform: rotate(170deg);
+  animation-delay: 0.28s;
+}
+
+.party-popper-dot {
+  position: absolute;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.party-popper .dot-one {
+  background: #ff7fa8;
+}
+
+.party-popper .dot-two {
+  background: #ffd873;
+}
+
+.party-popper .dot-three {
+  background: #8fd8ff;
+}
+
+.party-popper .dot-four {
+  background: #fff5a6;
+}
+
+.party-popper-left .dot-one {
+  left: 42px;
+  animation: popperDotLeftOne 1.8s ease-out infinite;
+}
+
+.party-popper-left .dot-two {
+  left: 32px;
+  animation: popperDotLeftTwo 1.8s ease-out infinite 0.12s;
+}
+
+.party-popper-left .dot-three {
+  left: 48px;
+  animation: popperDotLeftThree 1.8s ease-out infinite 0.22s;
+}
+
+.party-popper-left .dot-four {
+  left: 38px;
+  animation: popperDotLeftFour 1.8s ease-out infinite 0.32s;
+}
+
+.party-popper-right .dot-one {
+  right: 42px;
+  animation: popperDotRightOne 1.8s ease-out infinite;
+}
+
+.party-popper-right .dot-two {
+  right: 32px;
+  animation: popperDotRightTwo 1.8s ease-out infinite 0.12s;
+}
+
+.party-popper-right .dot-three {
+  right: 48px;
+  animation: popperDotRightThree 1.8s ease-out infinite 0.22s;
+}
+
+.party-popper-right .dot-four {
+  right: 38px;
+  animation: popperDotRightFour 1.8s ease-out infinite 0.32s;
+}
+
+#birthday-cake-svg {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 56px;
+}
+
+.cake-display {
+  position: relative;
+  z-index: 1;
+  width: min(240px, 64vw);
+  margin: 0 auto;
+  opacity: 0;
+  animation: cakeDisplayShow 0.01s linear 2s forwards;
+}
+
+.cake-surprise-candle {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 110px;
+  width: 5px;
+  height: 35px;
+  margin-left: -2.4px;
+  border-radius: 10px;
+  background: #fff;
+  transform: translateY(-300px);
+  backface-visibility: hidden;
+  animation: cakeCandleIn 500ms 6s ease-out forwards;
+}
+
+.cake-surprise-candle::before,
+.cake-surprise-candle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 0, 0, 0.4);
+}
+
+.cake-surprise-candle::after {
+  top: 25%;
+}
+
+.cake-surprise-candle::before {
+  top: 45%;
+}
+
+.cake-surprise-fire {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 6.7px;
+  height: 18px;
+  margin-left: -2.6px;
+  border-radius: 100%;
+}
+
+.cake-surprise-fire:nth-child(1) {
+  animation: cakeFire 2s 6.5s infinite;
+}
+
+.cake-surprise-fire:nth-child(2) {
+  animation: cakeFire 1.5s 6.5s infinite;
+}
+
+.cake-surprise-fire:nth-child(3) {
+  animation: cakeFire 1s 6.5s infinite;
+}
+
+.cake-surprise-fire:nth-child(4) {
+  animation: cakeFire 0.5s 6.5s infinite;
+}
+
+.cake-surprise-fire:nth-child(5) {
+  animation: cakeFire 0.2s 6.5s infinite;
+}
+
+.cake-surprise-text {
+  position: relative;
+  z-index: 3;
+  margin-top: -64px;
+  padding: 0 20px 40px;
+  color: #d1d1d1;
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+
+.cake-surprise-text h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-transform: lowercase;
+}
+
+.cake-surprise-text p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+}
+
 .scene-wrap {
   position: relative;
 }
@@ -1281,6 +1696,104 @@ button {
   }
 }
 
+@keyframes cakeFire {
+  0%,
+  100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+@keyframes cakeCandleIn {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cakeDisplayShow {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popperBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes popperDotLeftOne {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.2); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(28px, -78px) scale(1); }
+}
+
+@keyframes popperDotLeftTwo {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.2); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(12px, -92px) scale(0.9); }
+}
+
+@keyframes popperDotLeftThree {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.2); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(40px, -54px) scale(0.9); }
+}
+
+@keyframes popperDotLeftFour {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.2); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(22px, -64px) scale(0.8); }
+}
+
+@keyframes popperDotRightOne {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.2); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-28px, -78px) scale(1); }
+}
+
+@keyframes popperDotRightTwo {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.2); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-12px, -92px) scale(0.9); }
+}
+
+@keyframes popperDotRightThree {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.2); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-40px, -54px) scale(0.9); }
+}
+
+@keyframes popperDotRightFour {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.2); }
+  16% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-22px, -64px) scale(0.8); }
+}
+
+@keyframes decorFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
 @keyframes confettiFall {
   from {
     transform: translateY(-8vh) rotate(0deg);
@@ -1482,6 +1995,65 @@ button {
     top: 18px;
     left: 18px;
     max-width: 250px;
+  }
+
+  .cake-surprise-stage {
+    min-height: 62vh;
+  }
+
+  .cake-banner {
+    width: 94%;
+  }
+
+  .cake-banner-flags {
+    gap: 5px;
+  }
+
+  .cake-banner-flag {
+    width: 24px;
+    height: 34px;
+    padding-top: 5px;
+    font-size: 0.58rem;
+  }
+
+  .cake-side-balloons {
+    top: 120px;
+    gap: 8px;
+  }
+
+  .cake-side-balloons-left {
+    left: 12px;
+  }
+
+  .cake-side-balloons-right {
+    right: 12px;
+  }
+
+  .decor-balloon {
+    width: 34px;
+    height: 48px;
+  }
+
+  .party-popper {
+    bottom: 30px;
+    width: 56px;
+    height: 88px;
+  }
+
+  .party-popper-left {
+    left: 10px;
+  }
+
+  .party-popper-right {
+    right: 10px;
+  }
+
+  .cake-surprise-candle {
+    bottom: 132px;
+  }
+
+  .cake-surprise-text {
+    margin-top: -48px;
   }
 
   .character {
