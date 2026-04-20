@@ -4,10 +4,9 @@ function ArcadeHome({ games, levelOneBest, surpriseUnlocked, onPlayLevelOne }) {
       <div className="arcade-hero">
         <div className="arcade-copy">
           <p className="eyebrow">Arcade Platform</p>
-          <h1>Play the balloon game and unlock the birthday cake surprise.</h1>
+          <h1>Play the balloon game.</h1>
           <p className="intro">
-            Keeping it simple: clear the balloon round, then the final birthday cake animation
-            opens right away.
+            Keeping it simple: clear the ballon game.
           </p>
 
           <div className="moment-strip">
