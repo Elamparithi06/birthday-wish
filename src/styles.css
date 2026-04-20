@@ -1261,7 +1261,7 @@ button {
   position: absolute;
   z-index: 3;
   left: 50%;
-  bottom: 82px;
+  bottom: 110px;
   width: 5px;
   height: 35px;
   margin-left: -2.4px;
@@ -2049,7 +2049,7 @@ button {
   }
 
   .cake-surprise-candle {
-    bottom: 132px;
+    bottom: 110px;
   }
 
   .cake-surprise-text {

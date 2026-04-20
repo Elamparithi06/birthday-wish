@@ -7,8 +7,8 @@ export const arcadeGames = [
     badge: 'Balloon Game',
     title: 'Sky Balloon Blitz',
     description:
-      'Catch balloons falling from the sky, avoid the bombs, and score 50 points to unlock the birthday cake surprise.',
-    meta: '5-point balloons, rare 10-point balloons, instant bomb fail, cake reveal at the end',
+      'Catch balloons falling from the sky, avoid the bombs, and score 50 points.',
+    meta: '5-point balloons, rare 10-point balloons, instant bomb fail.',
   },
 ];
 
