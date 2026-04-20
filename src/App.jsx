@@ -10,7 +10,7 @@ function App() {
   const [screen, setScreen] = useState('home');
   const [levelOneBest, setLevelOneBest] = useState(0);
   const [surpriseUnlocked, setSurpriseUnlocked] = useState(false);
-  const birthdayName = 'Roopan';
+  const birthdayName = 'Harshini';
   const isGameScreen = screen === 'level1';
 
   useEffect(() => {
