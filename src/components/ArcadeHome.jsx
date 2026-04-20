@@ -12,7 +12,7 @@ function ArcadeHome({ games, levelOneBest, surpriseUnlocked, onPlayLevelOne }) {
           <div className="moment-strip">
             <span>One game only</span>
             <span>Pop balloons</span>
-            <span>Cake surprise at the end</span>
+            <span>Finish the game</span>
           </div>
         </div>
 
