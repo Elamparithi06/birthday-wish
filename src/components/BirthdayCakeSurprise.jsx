@@ -22,7 +22,7 @@ const cakeSvg = `
 </svg>
 `;
 
-function BirthdayCakeSurprise({ birthdayName = 'Roopan' }) {
+function BirthdayCakeSurprise({ birthdayName = 'Harshini' }) {
   const bannerLetters = 'HAPPY BIRTHDAY'.split('');
 
   return (
