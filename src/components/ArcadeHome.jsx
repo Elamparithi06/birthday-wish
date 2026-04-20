@@ -19,7 +19,7 @@ function ArcadeHome({ games, levelOneBest, surpriseUnlocked, onPlayLevelOne }) {
         <div className="arcade-status-card">
           <span className="tip-label">Session progress</span>
           <p>Balloon game: Ready to play</p>
-          <p>Cake surprise: {surpriseUnlocked ? 'Unlocked in this session' : 'Locked till 50 points'}</p>
+          <p>Game: {surpriseUnlocked ? 'Unlocked in this session' : 'Locked till 50 points'}</p>
           <p>Best Level 1 score: {levelOneBest}</p>
         </div>
       </div>
